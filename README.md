@@ -162,7 +162,6 @@ It’s already configured to work out of the box with the [dorky.uk](https://dor
 
 Python version 3.9 or higher is required.
 ```
-httpx
 nicegui
 ```
 
