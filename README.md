@@ -6,7 +6,6 @@
 
 [![PyPI version](https://badge.fury.io/py/dorky-app.svg)](https://badge.fury.io/py/dorky-app)
 ![Python minimum version](https://img.shields.io/badge/Python-3.8%2B-brightgreen)
-[![Downloads](https://pepy.tech/badge/dorky-app)](https://pepy.tech/project/dorky-app)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![License](https://img.shields.io/github/license/balestek/dorky-app.svg)](https://github.com/balestek/dorky/blob/master/LICENSE)
 
@@ -16,7 +15,7 @@ __Dorky__ is a lightweight OSINT companion tool that helps you run search engine
 Try it online at: __[dorky.uk](https://dorky.uk)__.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/balestek/dorky/master/dorky/assets/images/dorky-screenshot.png">
+  <img src="https://raw.githubusercontent.com/balestek/dorky-app/master/dorky/assets/images/dorky-screenshot.png">
 </p>
 
 ## ✨ Highlights
@@ -28,10 +27,6 @@ Here’s what __Dorky__ can do:
 - ✅ Firefox extension for easier access and quicker usage.
 
 Under the hood, __Dorky__ maps or approximates compatible search operators using URL tweaking.
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/balestek/dorky-app/master/dorky/assets/images/dorky-screenshot.png">
-</p>
 
 ### ☰ Supported Operators
 #### Google style
