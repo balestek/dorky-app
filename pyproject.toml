@@ -1,0 +1,59 @@
+[build-system]
+requires = ["hatchling>=1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "dorky-app"
+dynamic = [
+  "version"
+]
+description = "Dorky is an OSINT (Open Source Intelligence) tool designed for light to medium-level dorking across multiple search engines."
+authors = [
+  { name = "balestek"},
+]
+license = { file = "LICENSE" }
+readme = "README.md"
+keywords = ["osint", "osint-tools", "osint-python", "open-source-intelligence", "information-gathering", "osint-tool", "investigation", "dork", "dorking", "google", "bing", "yandex", "duckduckgo", "brave", "bing", "search-engine", "dork-conversion", "python", "pypi", "uv", "uvx", "pipx"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Operating System :: OS Independent",
+    "Natural Language :: English",
+    "Environment :: Console",
+    "Environment :: Web Environment",
+    "Intended Audience :: Education"
+]
+requires-python = ">=3.9"
+dependencies = [
+    "nicegui"
+]
+
+[project.scripts]
+dorky-app  = "dorky.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["dorky"]
+
+[tool.hatch.build.targets.sdist]
+exclude = [
+    ".git/*",
+    ".github/*",
+    ".idea/*",
+    ".dockerignore",
+    "Dockerfile",
+    ".nicegui/*"
+]
+
+[tool.hatch.version]
+path = "dorky/__about__.py"
+
+[project.urls]
+"Homepage" = "https://github.com/balestek/dorky-app"
+"Bug Tracker" = "https://github.com/balestek/dorky-app/issues"

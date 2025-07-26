@@ -1,0 +1,451 @@
+[
+  {
+    "name": "Google",
+    "url": "https://www.google.com/search?q={}&utm=14&num=50",
+    "date_chunk": null,
+    "operators" : {
+      "inurl:": {
+        "type": "keyword",
+        "keyword": "inurl:"
+      },
+      "intitle:": {
+        "type": "keyword",
+        "keyword": "intitle:"
+      },
+      "intext:": {
+        "type": "keyword",
+        "keyword": "intext:"
+      },
+      "site:": {
+        "type": "keyword",
+        "keyword": "site:"
+      },
+      "filetype:": {
+        "type": "keyword",
+        "keyword": "filetype:"
+      },
+      "ext:": {
+        "type": "keyword",
+        "keyword": "ext:"
+      },
+      " | ": {
+        "type": "keyword",
+        "keyword": " | "
+      },
+      " OR ": {
+        "type": "keyword",
+        "keyword": " OR "
+      },
+      " -": {
+        "type": "keyword",
+        "keyword": " -"
+      },
+      " AND ": {
+        "type": "keyword",
+        "keyword": " AND "
+      },
+      " +": {
+        "type": "keyword",
+        "keyword": " AND "
+      },
+      " & ": {
+        "type": "keyword",
+        "keyword": " AND "
+      },
+      "lang:": {
+        "type": "url",
+        "chunk": "&lr=lang_{}"
+      },
+      "country:": {
+        "type": "url",
+        "chunk": "&cr=country{}"
+      },
+      "*": {
+        "type": "wildcard",
+        "action": null
+      },
+      "sub:": {
+        "type": "transform"
+      },
+      "last:": {
+        "type": "special"
+      }
+    }
+  },
+  {
+    "name": "Bing",
+    "url": "https://www.bing.com/search?q={}&count=50",
+    "date_chunk": "&filters=ex1%3a%22ez5_{}_{}%22",
+    "operators": {
+      "inurl:": {
+        "type": "keyword",
+        "keyword": ""
+      },
+      "intitle:": {
+        "type": "keyword",
+        "keyword": "intitle:"
+      },
+      "intext:": {
+        "type": "keyword",
+        "keyword": "inbody:"
+      },
+      "site:": {
+        "type": "keyword",
+        "keyword": "site:"
+      },
+      "filetype:": {
+        "type": "keyword",
+        "keyword": "filetype:"
+      },
+      "ext:": {
+        "type": "keyword",
+        "keyword": "filetype:"
+      },
+      " | ": {
+        "type": "keyword",
+        "keyword": " | "
+      },
+      " OR ": {
+        "type": "keyword",
+        "keyword": " OR "
+      },
+      " AND ": {
+        "type": "keyword",
+        "keyword": " AND "
+      },
+      " -": {
+        "type": "keyword",
+        "keyword": " -"
+      },
+      "lang:": {
+        "type": "keyword",
+        "keyword": "language:"
+      },
+      "country:": {
+        "type": "keyword",
+        "keyword": "loc:"
+      },
+      "*": {
+        "type": "wildcard",
+        "action": "split"
+      },
+      "sub:": {
+        "type": "delete"
+      },
+      "last:": {
+        "type": "delete"
+      }
+    }
+  },
+  {
+    "name": "Yandex",
+    "url": "https://yandex.com/search/?text={}",
+    "date_chunk": null,
+    "operators": {
+      " | ": {
+        "type": "keyword",
+        "keyword": " | "
+      },
+      " OR ": {
+        "type": "keyword",
+        "keyword": " | "
+      },
+      " AND ": {
+        "type": "rewrite"
+      },
+      " -": {
+        "type": "keyword",
+        "keyword": " -"
+      },
+      "inurl:": {
+        "type": "keyword",
+        "keyword": "inurl:"
+      },
+      "-inurl:": {
+        "type": "delete"
+      },
+      "intitle:": {
+        "type": "keyword",
+        "keyword": "title:"
+      },
+      "-intitle:": {
+        "type": "delete"
+      },
+      "intext:": {
+        "type": "keyword",
+        "keyword": "intext:"
+      },
+      "-intext:": {
+          "type": "delete"
+      },
+      "site:": {
+        "type": "keyword",
+        "keyword": "site:"
+      },
+      "-site:": {
+        "type": "delete"
+      },
+      "filetype:": {
+        "type": "keyword",
+        "keyword": "mime:"
+      },
+      "-filetype:": {
+        "type": "delete"
+      },
+      "ext:": {
+        "type": "keyword",
+        "keyword": "mime:"
+      },
+      "-ext:": {
+        "type": "delete"
+      },
+      "lang:": {
+        "type": "special",
+        "chunk": "&lang={}"
+      },
+      "-lang:": {
+        "type": "delete"
+      },
+      "country:": {
+        "type": "special",
+        "chunk": "&lr={}"
+      },
+      "-country:": {
+        "type": "delete"
+      },
+      "*": {
+        "type": "wildcard",
+        "action": null
+      },
+      "sub:": {
+        "type": "transform"
+      },
+      "last:": {
+        "type": "delete"
+      }
+    }
+  },
+  {
+    "name": "DuckDuckGo",
+    "url": "https://duckduckgo.com/?q={}",
+    "date_chunk": "&df={}..{}",
+    "operators": {
+      "inurl:": {
+        "type": "keyword",
+        "keyword": "inurl:"
+      },
+      "intitle:": {
+        "type": "keyword",
+        "keyword": "intitle:"
+      },
+      "intext:": {
+        "type": "keyword",
+        "keyword": ""
+      },
+      "site:": {
+        "type": "keyword",
+        "keyword": "site:"
+      },
+      "filetype:": {
+        "type": "keyword",
+        "keyword": "filetype:"
+      },
+      "ext:": {
+        "type": "keyword",
+        "keyword": "filetype:"
+      },
+      " | ": {
+        "type": "keyword",
+        "keyword": " OR "
+      },
+      " OR ": {
+        "type": "keyword",
+        "keyword": " OR "
+      },
+      " AND ": {
+        "type": "keyword",
+        "keyword": " +"
+      },
+      " -": {
+        "type": "keyword",
+        "keyword": " -"
+      },
+      "lang:": {
+        "type": "delete"
+      },
+      "country:": {
+        "type": "special",
+        "chunk": "&kl={}"
+      },
+      "*": {
+        "type": "wildcard",
+        "action": "split"
+      },
+      "sub:": {
+        "type": "delete"
+      },
+      "last:": {
+        "type": "delete"
+      }
+    }
+  },
+  {
+    "name": "Brave",
+    "url": "https://search.brave.com/search?q={}",
+    "date_chunk": "&tf={}to{}",
+    "operators": {
+      "inurl:": {
+        "type": "keyword",
+        "keyword": ""
+      },
+      "-inurl:": {
+        "type": "delete"
+      },
+      "intitle:": {
+        "type": "keyword",
+        "keyword": "intitle:"
+      },
+      "-intitle:": {
+        "type": "delete"
+      },
+      "intext:": {
+        "type": "keyword",
+        "keyword": "inbody:"
+      },
+      "-intext:": {
+        "type": "delete"
+      },
+      "site:": {
+        "type": "keyword",
+        "keyword": "site:"
+      },
+      "-site:": {
+        "type": "delete"
+      },
+      "filetype:": {
+        "type": "keyword",
+        "keyword": "filetype:"
+      },
+      "-filetype:": {
+        "type": "delete"
+      },
+      "ext:": {
+        "type": "keyword",
+        "keyword": "filetype:"
+      },
+      "-ext:": {
+        "type": "delete"
+      },
+      " | ": {
+        "type": "keyword",
+        "keyword": " OR "
+      },
+      " OR ": {
+        "type": "keyword",
+        "keyword": " OR "
+      },
+      " AND ": {
+        "type": "keyword",
+        "keyword": " AND "
+      },
+      " -": {
+        "type": "keyword",
+        "keyword": " -"
+      },
+      "lang:": {
+        "type": "keyword",
+        "keyword": "lang:"
+      },
+      "-lang:": {
+        "type": "delete"
+      },
+      "country:": {
+        "type": "keyword",
+        "keyword": "loc:"
+      },
+      "-country:": {
+        "type": "delete"
+      },
+      "*": {
+        "type": "wildcard",
+        "action": "split"
+      },
+      "sub:": {
+        "type": "delete"
+      },
+      "last:": {
+        "type": "delete"
+      }
+    }
+  },
+  {
+    "name": "Baidu",
+    "url": "https://www.baidu.com/s?wd={}&rn=50",
+    "date_chunk": "&gpc=stf={},{}|stftype=2",
+    "operators": {
+      "inurl:": {
+        "type": "keyword",
+        "keyword": "inurl:"
+      },
+      "intitle:": {
+        "type": "keyword",
+        "keyword": "intitle:"
+      },
+      "intext:": {
+        "type": "keyword",
+        "keyword": ""
+      },
+      "-intext:": {
+        "type": "delete"
+      },
+      "site:": {
+        "type": "keyword",
+        "keyword": "site:"
+      },
+      "filetype:": {
+        "type": "keyword",
+        "keyword": "filetype:"
+      },
+      "ext:": {
+        "type": "keyword",
+        "keyword": "filetype:"
+      },
+      " | ": {
+        "type": "keyword",
+        "keyword": " | "
+      },
+      " OR ": {
+        "type": "keyword",
+        "keyword": " | "
+      },
+      " AND ": {
+        "type": "keyword",
+        "keyword": " +"
+      },
+      " +": {
+        "type": "keyword",
+        "keyword": " +"
+      },
+      " -": {
+        "type": "keyword",
+        "keyword": " -"
+      },
+      "lang:": {
+        "type": "delete"
+      },
+      "country:": {
+        "type": "delete"
+      },
+      "*": {
+        "type": "wildcard",
+        "action": "split"
+      },
+      "sub:": {
+        "type": "delete"
+      },
+      "last:": {
+        "type": "delete"
+      }
+    }
+  }
+]
