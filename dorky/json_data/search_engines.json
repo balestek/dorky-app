@@ -69,6 +69,9 @@
       },
       "last:": {
         "type": "special"
+      },
+      "!IP": {
+        "type": "special"
       }
     }
   },
@@ -133,6 +136,9 @@
         "type": "delete"
       },
       "last:": {
+        "type": "delete"
+      },
+      "!IP": {
         "type": "delete"
       }
     }
@@ -222,6 +228,9 @@
       },
       "last:": {
         "type": "delete"
+      },
+      "!IP": {
+        "type": "delete"
       }
     }
   },
@@ -285,6 +294,9 @@
         "type": "delete"
       },
       "last:": {
+        "type": "delete"
+      },
+      "!IP": {
         "type": "delete"
       }
     }
@@ -375,6 +387,9 @@
       },
       "last:": {
         "type": "delete"
+      },
+      "!IP": {
+        "type": "delete"
       }
     }
   },
@@ -444,6 +459,9 @@
         "type": "delete"
       },
       "last:": {
+        "type": "delete"
+      },
+      "!IP": {
         "type": "delete"
       }
     }

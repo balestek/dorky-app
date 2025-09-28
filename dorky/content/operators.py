@@ -461,6 +461,37 @@ operator_list = [
                 "note": "Using minutes or seconds can help monitor a hot topic in real time.",
             }
         ]
+    },
+    {
+        "table": {
+            "operator": "!IP",
+            "name": "Search in IPs",
+            "native": "no",
+            "google": "yes",
+            "bing": "no",
+            "yandex": "no",
+            "duckduckgo": "no",
+            "brave": "no",
+            "baidu": "no"
+        },
+        "description": "Search in the IPs indexed by Google, not domains.",
+        "examples": [
+            {
+                "example": "osint !IP",
+                "explanation": "Results in the IPs indexed by Google about <code>osint</code>.",
+            }
+        ],
+        "notes": [
+            {
+                "note": "This operator is exclusive to Google and will force a Google search, no matter which search engine you use.",
+            },
+            {
+                "note": "It opens multiple tabs to cover the entire IPv4 range, depending on the length of your query. It can trigger Google reCAPTCHAs.",
+            },
+            {
+                "note": "Adapted from <a href='https://github.com/SeifElsallamy/gip' target='_blank'>gip</a> by Seif Elsallamy.",
+            }
+        ]
     }
 ]
 

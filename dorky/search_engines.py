@@ -35,7 +35,7 @@ class Search:
         # Engine override for special operators
         if "sub:" in self.query:
             engine_set = ["Google", "Yandex"]
-        if "last:" in self.query:
+        if "last:" in self.query or "!IP" in self.query:
             engine_set = ["Google"]
         # Retrieve the configuration for the selected search engines
         engines = [engine for engine in engines_conf if engine["name"] in engine_set]
@@ -227,6 +227,13 @@ class Search:
                                 )
                                 query = self.delete_keywords(query, [after_match])
                                 url += chunk
+                    # handle !IP: operator
+                    elif operator == "!IP" and details["type"] == "special":
+                        ip_queries = self.ip_google(query)
+                        for ip_query in ip_queries:
+                            ip_query = ip_query.replace(" !IP", "").replace("!IP ", "").replace(" !IP ", "")
+                            # ip_query = urllib.parse.quote(ip_query)
+                            converted_queries.append(url.format(ip_query))
                     # delete unsupported operator
                     elif details["type"] == "delete":
                         if match := self.get_operator_and_value(query, operator):
@@ -237,7 +244,7 @@ class Search:
                         if operator == " AND ":
                             query = self.convert_and_to_yandex(query)
 
-            # Handle DuckDuckGo countries
+            # Handle DuckDuckGo countries, with multiple languages support per country
             if engine["name"] == "DuckDuckGo" and " country:" in query:
                 if match := self.get_operator_and_value(query, "country:"):
                     operator_value = self.get_operator_value(match.group())
@@ -261,11 +268,33 @@ class Search:
                         region_url = f"{url}{chunk.format(region)}"
                         converted_queries.append(region_url.format(query))
             else:
+                # URL encode the query except for Baidu
                 if engine["name"] != "Baidu":
                     query = urllib.parse.quote(query)
                 converted_queries.append(url.format(query))
+                # Remove the non IP search with Google
+                if engine["name"] == "Google" and "!IP" in self.query:
+                    converted_queries = converted_queries[:-1]
+
         converted_queries.reverse()
         return {"status": "ok", "urls": converted_queries}
+
+    # Adapted from https://github.com/SeifElsallamy/gip by Seif Elsallamy
+    @staticmethod
+    def ip_google(search):
+        o = 32 - len(search.split())
+        template = "site:*.*.{}.*"
+        ip_queries = []
+        step = o
+        start = 0
+        while start < 256:
+            end = min(start + step, 256)
+            parts = [template.format(ii) for ii in range(start, end)]
+            query = " |".join(parts)
+            query = f"{search} ({query})"
+            ip_queries.append(query)
+            start = end
+        return ip_queries
 
     @staticmethod
     def convert_and_to_yandex(query: str) -> str:

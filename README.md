@@ -47,6 +47,7 @@ Under the hood, __Dorky__ maps or approximates compatible search operators using
 - country:
 - sub:
 - last:
+- !IP
 
 The full list of supported operators and their compatibility can be found at __[dorky.uk](https://dorky.uk)__.
 
