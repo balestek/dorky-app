@@ -26,9 +26,9 @@ def main(port: int):
 
     # Main page
     @ui.page("/", title="Dorky search")
-    async def search_page(client: Client):
+    async def search_page():
         """Main page of Dorky."""
-        await client.connected()
+        await ui.context.client.connected(timeout=10)
 
         # Set default storage values
         for key, default in [
